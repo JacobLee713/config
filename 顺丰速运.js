@@ -1,3 +1,9 @@
+[Script]
+http-response ^https:\/\/mes-mimp-web\.sf-express\.com\/mcs-mimp\/ share\/weChat\/shareGiftReceiveRedirect.+ script-path=https://gist.githubusercontent.com/Sliverkiss/1
+fblcf9cd7486d30752blba29b871e37/raw/sfsy-js,
+requires-body=true,timeout=60,tag=顺丰速运获取token
+[MITM]
+hostname = mcs-mimp-web.sf-express.com
 /*
 顺丰速运 v3.03
 
