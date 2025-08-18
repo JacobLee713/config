@@ -6,7 +6,7 @@ function main(config) {
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       name: "PROXY",
       type: "select",
-      proxies: ["AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["DIRECT", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png",
@@ -20,19 +20,31 @@ function main(config) {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png",
       name: "AIGC",
       type: "select",
-      proxies: ["SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png",
       name: "Telegram",
       type: "select",
-      proxies: ["HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png",
       name: "Google",
       type: "select",
-      proxies: ["HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
+    },
+    {
+      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Steam.png",
+      name: "Steam",
+      type: "select",
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
+    },
+    {
+      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Game.png",
+      name: "Epic",
+      type: "select",
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
@@ -71,14 +83,24 @@ function main(config) {
       interval: 300,
     },
     {
+      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png",
+      "include-all": true,
+      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
+      filter: "(?i)台湾|Taiwan|TW|台北|🇹🇼",
+      name: "TW AUTO",
+      type: "url-test",
+      interval: 300,
+    },
+    {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png",
       "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
-      proxies: ["AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO"],
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
       name: "GLOBAL",
       type: "select",
     }
   ];
+
   if (!config['rule-providers']) {
     config['rule-providers'] = {};
   }
@@ -195,6 +217,14 @@ function main(config) {
       format: "yaml",
       type: "http",
     },
+    epic: {
+      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml",
+      path: "./ruleset/epic.yaml",
+      behavior: "classical",
+      interval: 86400,
+      format: "yaml",
+      type: "http",
+    },
   });
 
   config["rules"] = [
@@ -204,7 +234,8 @@ function main(config) {
     "RULE-SET,bard,AIGC",
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
-    "RULE-SET,steam,PROXY",
+    "RULE-SET,steam,Steam",
+    "RULE-SET,epic,Epic",
     "RULE-SET,telegram_domain,Telegram",
     "RULE-SET,telegram_ip,Telegram",
     "RULE-SET,google_domain,Google",
@@ -216,3 +247,4 @@ function main(config) {
   ];
   return config;
 }
+
