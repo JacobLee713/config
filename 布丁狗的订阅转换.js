@@ -41,7 +41,7 @@ function main(config) {
       proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Game.png",
+      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/epic.png",
       name: "Epic",
       type: "select",
       proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
