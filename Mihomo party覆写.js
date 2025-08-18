@@ -225,8 +225,6 @@ function main(config) {
     "DOMAIN-SUFFIX,download.epicgames.com,DIRECT",
     "DOMAIN-SUFFIX,epicgames-download1.akamaized.net,DIRECT",
 
-    "DOMAIN-SUFFIX,dogfight360.com,DIRECT",
-
     "RULE-SET,steam,Steam",
     "RULE-SET,epic,Epic",
     "RULE-SET,telegram_domain,Telegram",
