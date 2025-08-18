@@ -29,12 +29,6 @@ function main(config) {
       proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png",
-      name: "Google",
-      type: "select",
-      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
-    },
-    {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Steam.png",
       name: "Steam",
       type: "select",
@@ -129,14 +123,6 @@ function main(config) {
       format: "yaml",
       type: "http",
     },
-    google_domain: {
-      url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml",
-      path: "./ruleset/google_domain.yaml",
-      behavior: "domain",
-      interval: 86400,
-      format: "yaml",
-      type: "http",
-    },
     "geolocation-!cn": {
       url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml",
       path: "./ruleset/geolocation-!cn.yaml",
@@ -156,14 +142,6 @@ function main(config) {
     telegram_ip: {
       url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.yaml",
       path: "./ruleset/telegram_ip.yaml",
-      behavior: "ipcidr",
-      interval: 86400,
-      format: "yaml",
-      type: "http",
-    },
-    google_ip: {
-      url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml",
-      path: "./ruleset/google_ip.yaml",
       behavior: "ipcidr",
       interval: 86400,
       format: "yaml",
@@ -193,9 +171,9 @@ function main(config) {
       format: "yaml",
       type: "http",
     },
-    bard: {
-      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BardAI/BardAI.yaml",
-      path: "./ruleset/bard.yaml",
+    gemini: {
+      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml",
+      path: "./ruleset/gemini.yaml",
       behavior: "classical",
       interval: 86400,
       format: "yaml",
@@ -231,15 +209,26 @@ function main(config) {
     "RULE-SET,private,DIRECT",
     "RULE-SET,bing,AIGC",
     "RULE-SET,copilot,AIGC",
-    "RULE-SET,bard,AIGC",
+    "RULE-SET,gemini,AIGC",
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
+
+    // 🎮 Steam 下载直连
+    "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
+    "DOMAIN-SUFFIX,steamserver.net,DIRECT",
+    "DOMAIN-SUFFIX,steampipe.steamcontent.tld,DIRECT",
+    "DOMAIN-SUFFIX,hsar.steampowered.com,DIRECT",
+    "DOMAIN-SUFFIX,content.steampowered.com,DIRECT",
+    "DOMAIN-SUFFIX,cdn.steampowered.com,DIRECT",
+
+    // 🎮 Epic 下载直连
+    "DOMAIN-SUFFIX,download.epicgames.com,DIRECT",
+    "DOMAIN-SUFFIX,epicgames-download1.akamaized.net,DIRECT",
+
     "RULE-SET,steam,Steam",
     "RULE-SET,epic,Epic",
     "RULE-SET,telegram_domain,Telegram",
     "RULE-SET,telegram_ip,Telegram",
-    "RULE-SET,google_domain,Google",
-    "RULE-SET,google_ip,Google",
     "RULE-SET,geolocation-!cn,PROXY",
     "RULE-SET,cn_domain,DIRECT",
     "RULE-SET,cn_ip,DIRECT",
