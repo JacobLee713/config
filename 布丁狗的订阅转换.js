@@ -228,10 +228,6 @@ function main(config) {
   });
 
   config["rules"] = [
-    "DOMAIN,steamcdn-a.akamaihd.net,DIRECT",
-    "DOMAIN-SUFFIX,cm.steampowered.com,DIRECT",
-    "DOMAIN-SUFFIX,steamserver.net,DIRECT",
-    "DOMAIN-SUFFIX,steamcontent.com,DIRECT"
     "RULE-SET,private,DIRECT",
     "RULE-SET,bing,AIGC",
     "RULE-SET,copilot,AIGC",
