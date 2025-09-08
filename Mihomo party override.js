@@ -213,6 +213,9 @@ function main(config) {
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
 
+    // ⭐ 新增：aistudio 走 AIGC
+    "DOMAIN-KEYWORD,aistudio,AIGC",
+    
     // 🎮 Steam 下载直连
     "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
     "DOMAIN-SUFFIX,steamserver.net,DIRECT",
