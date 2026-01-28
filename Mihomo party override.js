@@ -29,18 +29,6 @@ function main(config) {
       proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Steam.png",
-      name: "Steam",
-      type: "select",
-      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
-    },
-    {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/epic.png",
-      name: "Epic",
-      type: "select",
-      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
-    },
-    {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
       "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
@@ -187,17 +175,9 @@ function main(config) {
       format: "yaml",
       type: "http",
     },
-    steam: {
-      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
-      path: "./ruleset/steam.yaml",
-      behavior: "classical",
-      interval: 86400,
-      format: "yaml",
-      type: "http",
-    },
-    epic: {
-      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml",
-      path: "./ruleset/epic.yaml",
+    GameDownload: {
+      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/GameDownload.yaml",
+      path: "./ruleset/GameDownload.yaml",
       behavior: "classical",
       interval: 86400,
       format: "yaml",
@@ -207,29 +187,24 @@ function main(config) {
 
   config["rules"] = [
     "RULE-SET,private,DIRECT",
+    
+    // AI 规则
     "RULE-SET,bing,AIGC",
     "RULE-SET,copilot,AIGC",
     "RULE-SET,gemini,AIGC",
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
-
-    // ⭐ 新增：aistudio 走 AIGC
     "DOMAIN-KEYWORD,aistudio,AIGC",
-    
-    // 🎮 Steam 下载直连
+
+    // 1. 游戏下载直连（高优先级）
     "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
     "DOMAIN-SUFFIX,steamserver.net,DIRECT",
-    "DOMAIN-SUFFIX,steampipe.steamcontent.tld,DIRECT",
-    "DOMAIN-SUFFIX,hsar.steampowered.com,DIRECT",
-    "DOMAIN-SUFFIX,content.steampowered.com,DIRECT",
-    "DOMAIN-SUFFIX,cdn.steampowered.com,DIRECT",
+    "RULE-SET,GameDownload,DIRECT",
 
-    // 🎮 Epic 下载直连
-    "DOMAIN-SUFFIX,download.epicgames.com,DIRECT",
-    "DOMAIN-SUFFIX,epicgames-download1.akamaized.net,DIRECT",
-    
-    "RULE-SET,steam,Steam",
-    "RULE-SET,epic,Epic",
+    // 2. 国内游戏流量直连（使用内置 GEOSITE）
+    "GEOSITE,steam@cn,DIRECT",
+    "GEOSITE,category-games@cn,DIRECT",
+
     "RULE-SET,telegram_domain,Telegram",
     "RULE-SET,telegram_ip,Telegram",
     "RULE-SET,geolocation-!cn,PROXY",
