@@ -29,6 +29,12 @@ function main(config) {
       proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
+      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OvO.png",
+      name: "Comic",
+      type: "fallback",
+      proxies: ["HK AUTO","TW AUTO", "SG AUTO", "US AUTO"],
+    },
+    {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
       "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
@@ -195,6 +201,7 @@ function main(config) {
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
     "DOMAIN-KEYWORD,aistudio,AIGC",
+    "DOMAIN-KEYWORD,18comic,comic",
 
     // 1. 游戏下载直连（高优先级）
     "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
