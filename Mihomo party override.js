@@ -41,6 +41,7 @@ function main(config) {
       name: "HK AUTO",
       type: "url-test",
       interval: 300,
+      proxies: [],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png",
@@ -49,6 +50,7 @@ function main(config) {
       name: "SG AUTO",
       type: "url-test",
       interval: 300,
+      proxies: [],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png",
@@ -57,6 +59,7 @@ function main(config) {
       name: "JP AUTO",
       type: "url-test",
       interval: 300,
+      proxies: [],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png",
@@ -65,6 +68,7 @@ function main(config) {
       name: "US AUTO",
       type: "url-test",
       interval: 300,
+      proxies: [],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png",
@@ -73,14 +77,7 @@ function main(config) {
       name: "TW AUTO",
       type: "url-test",
       interval: 300,
-    },
-    {
-      icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png",
-      "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
-      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
-      name: "GLOBAL",
-      type: "select",
+      proxies: [],
     }
   ];
 
