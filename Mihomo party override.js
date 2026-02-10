@@ -203,7 +203,7 @@ function main(config) {
     "DOMAIN-KEYWORD,aistudio,AIGC",
     "DOMAIN-KEYWORD,18comic,Comic",
 
-    // 1. 游戏下载直连（高优先级）
+    // 1. 游戏下载直连（更高优先级）
     "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
     "DOMAIN-SUFFIX,steamserver.net,DIRECT",
     "RULE-SET,GameDownload,DIRECT",
