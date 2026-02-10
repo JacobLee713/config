@@ -36,7 +36,6 @@ function main(config) {
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
-      "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       filter: "(?i)香港|Hong Kong|HK|🇭🇰",
       name: "HK AUTO",
@@ -45,7 +44,6 @@ function main(config) {
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png",
-      "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       filter: "(?i)新加坡|Singapore|SG|🇸🇬",
       name: "SG AUTO",
@@ -54,7 +52,6 @@ function main(config) {
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png",
-      "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       filter: "(?i)日本|Japan|JP|🇯🇵",
       name: "JP AUTO",
@@ -63,7 +60,6 @@ function main(config) {
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png",
-      "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       filter: "(?i)美国|USA|US|🇺🇸",
       name: "US AUTO",
@@ -72,7 +68,6 @@ function main(config) {
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png",
-      "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
       filter: "(?i)台湾|Taiwan|TW|台北|🇹🇼",
       name: "TW AUTO",
