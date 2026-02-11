@@ -31,8 +31,8 @@ function main(config) {
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OvO.png",
       name: "Comic",
-      type: "fallback",
-      proxies: ["HK AUTO","TW AUTO", "SG AUTO", "US AUTO"],
+      type: "select",
+      proxies: ["DIRECT", "PROXY", "AUTO", "HK AUTO", "SG AUTO", "JP AUTO", "US AUTO", "TW AUTO"],
     },
     {
       icon: "https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
