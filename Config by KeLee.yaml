@@ -103,7 +103,7 @@ proxy-providers:
     override:
       additional-prefix: "[三月七] " # 为订阅节点添加机场名称前缀
   一元:
-    url: 'https://sub2.smallstrawberry.com/api/v1/client/subscribe?token=9b85060952e044ecbaaf8e6d25a432db'
+    url: 'https://sub3.smallstrawberry.com/api/v1/client/subscribe?token=5b0fff005e0045cb929260b9f385dc67'
     <<: *NodeParam
     path: './proxy_providers/一元.yaml'
     override:
